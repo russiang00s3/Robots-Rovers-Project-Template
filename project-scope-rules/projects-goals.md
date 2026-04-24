@@ -1,0 +1,2 @@
+# Projects Goals
+goals = deploy
