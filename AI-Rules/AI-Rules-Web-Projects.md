@@ -39,6 +39,7 @@ Required elements:
 - `<article>`
 - `<aside>`
 - `<footer>`
+
 Rule: Prefer semantic elements over `<div>`.
 
 ## 3. JavaScript Standards
