@@ -29,18 +29,17 @@ Separate HTML, CSS, and JavaScript into different files.
 - Avoid mixing concerns unless explicitly required
 
 ## 2. Semantic HTML First
-Use meaningful HTML elements instead of generic <div>.
+Use meaningful HTML elements instead of generic `<div>`.
 
 Required elements:
-- <header>
-- <nav>
-- <main>
-- <section>
-- <article>
-- <aside>
-- <footer>
-
-Rule: Prefer semantic elements over divs.
+- `<header>`
+- `<nav>`
+- `<main>`
+- `<section>`
+- `<article>`
+- `<aside>`
+- `<footer>`
+Rule: Prefer semantic elements over `<div>`.
 
 ## 3. JavaScript Standards
 - Avoid global variables
