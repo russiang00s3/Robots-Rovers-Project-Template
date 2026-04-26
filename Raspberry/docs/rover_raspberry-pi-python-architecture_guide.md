@@ -2,6 +2,7 @@
 ## Modular Design Using Python on Linux — Line Following Rover Reference Design
 
 > **Jim The STEAM Clown Edition**
+
 > **Super Big Disclaimer** - This was prompted and generated with ChatGPT, then briefly reviewed by jim The STEAM Clown, and then passed to Claude to update revise, tune, and recommend additions, then the AI documentation rules were applied, BUT, and this is a BIG BUT, I have not yet really reviewed this to be accurate or even what I want.  That will take the Summer 2026, while I am revamping my Python / Rover curriculum.
 
 ---
