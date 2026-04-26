@@ -1,12 +1,12 @@
 # AI Vibe Coding Over Arching Rules For The Project (Over Arching Rules)
 
-# 📘 GitHub/Vs Code - Safe Documentation & AI Vibe Coding Documentation Rules
+# 📘 Safe Documentation Rules for GitHub/VSCode Viewable Documentation
 
 This section defines **documentation-specific rules** for AI-generated Markdown, ensuring all outputs render correctly on GitHub, remain readable, and are safe for copy-paste usage.
 
 ---
 
-# 🧭 1. Markdown Structure Rules
+## 🧭 1. Markdown Structure Rules
 
 - Use a clear heading hierarchy:
   - One `# H1` per file
@@ -16,7 +16,7 @@ This section defines **documentation-specific rules** for AI-generated Markdown,
 
 ---
 
-# 🧾 2. Code Block Rules
+## 🧾 2. Code Block Rules
 
 - ALWAYS specify a language in code blocks:
   - `html`
@@ -29,7 +29,7 @@ This section defines **documentation-specific rules** for AI-generated Markdown,
 - All code must be properly fenced using the correct language tag
 ---
 
-# 📦 3. Copy-Paste Readiness Rule
+## 📦 3. Copy-Paste Readiness Rule
 
 - All examples must be:
   - runnable OR
@@ -38,7 +38,7 @@ This section defines **documentation-specific rules** for AI-generated Markdown,
 
 ---
 
-# 🧠 4. Explanation vs Code Separation
+## 🧠 4. Explanation vs Code Separation
 
 - NEVER mix explanation text inside code blocks
 - All explanations must be outside fenced code sections
@@ -46,7 +46,7 @@ This section defines **documentation-specific rules** for AI-generated Markdown,
 
 ---
 
-# 📄 5. File Completeness Rule
+## 📄 5. File Completeness Rule
 
 When generating files (.md, .html, .js, etc.):
 - Output must be complete and self-contained
@@ -55,7 +55,7 @@ When generating files (.md, .html, .js, etc.):
 
 ---
 
-# 🌐 6. GitHub Rendering Safety Rule (CRITICAL)
+## 🌐 6. GitHub Rendering Safety Rule (CRITICAL)
 
 When writing Markdown:
 
@@ -75,7 +75,7 @@ Before final output:
 
 ---
 
-# 🔗 7. Link Formatting Rule
+## 🔗 7. Link Formatting Rule
 
 - Always use proper Markdown links:
   - `[text](https://example.com)`
@@ -83,7 +83,7 @@ Before final output:
 
 ---
 
-# 📊 8. Table Safety Rule
+## 📊 8. Table Safety Rule
 
 - Ensure all Markdown tables:
   - are properly aligned
@@ -92,7 +92,7 @@ Before final output:
 
 ---
 
-# 🧩 9. Diagram Rule (Optional)
+## 🧩 9. Diagram Rule (Optional)
 
 - Prefer Mermaid diagrams:
 ```mermaid
@@ -103,7 +103,7 @@ A --> B
 
 ---
 
-# ✍️ 10. Documentation Style Rule
+## ✍️ 10. Documentation Style Rule
 
 - Keep explanations:
   - concise
@@ -113,7 +113,7 @@ A --> B
 
 ---
 
-# ⚡ 11. AI Output Expectations
+## ⚡ 11. AI Output Expectations
 
 - Provide complete, usable documentation
 - Ensure consistency across all sections
@@ -122,6 +122,6 @@ A --> B
 
 ---
 
-# 📌 Summary Principle
+## 📌 Summary Principle
 
 > All documentation must be **GitHub-safe, structurally consistent, and free of rendering ambiguity.**
