@@ -1,6 +1,6 @@
 # AI Vibe Coding Over Arching Rules For The Project<BR>(Over Arching Rules)
 
-# 📘 Safe Documentation Rules for GitHub/VSCode Viewable Documentation
+# 📘 Rule Catagory #1 - Safe Documentation Rules
 
 This section defines **documentation-specific rules** for AI-generated Markdown, ensuring all outputs render correctly on GitHub, remain readable, and are safe for copy-paste usage.
 
