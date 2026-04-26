@@ -1,7 +1,7 @@
 # AI Vibe Coding Rules For WEB Based Projects
 
 # 📁 Project Structure
-
+When building a project, use these direcotory structure
 ```
 /project-root
 │
@@ -12,6 +12,7 @@
 │   └── app.js
 ├── /assets
 │   ├── images/
+│   ├── videos/
 │   └── icons/
 └── /components (optional)
 ```
