@@ -1,9 +1,7 @@
-# 🤖 Raspberry Pi Rover Architecture Study Guide
+# 🤖 Raspberry Pi Rover Architecture Guide
 ## Modular Design Using Python on Linux — Line Following Rover Reference Design
 
-> **Jim The STEAM Clown Edition**
-
-> **Super Big Disclaimer** - This was prompted and generated with ChatGPT, then briefly reviewed by jim The STEAM Clown, and then passed to Claude to update revise, tune, and recommend additions, then the AI documentation rules were applied, BUT, and this is a BIG BUT, I have not yet really reviewed this to be accurate or even what I want.  That will take the Summer 2026, while I am revamping my Python / Rover curriculum.
+> **Super Big Disclaimer** — This was prompted and generated with ChatGPT, then briefly reviewed by Jim The STEAM Clown, and then passed to Claude to update, revise, tune, and recommend additions, then the AI documentation rules were applied. BUT, and this is a BIG BUT, I have not yet really reviewed this to be accurate or even what I want. That will take the Summer 2026, while I am revamping my Python / Rover curriculum.
 
 ---
 
@@ -271,6 +269,48 @@ graph TD
 ```
 
 Every arrow in this diagram is intentional. Every missing arrow is equally intentional. The control layer does not touch hardware. The drivers do not implement behavior. The HAL does not contain logic. You will understand why each of those rules exists — and feel the consequences of breaking them — by the time you reach Section 11.
+
+### Project Directory Structure
+
+Before we look at what goes *inside* each file, let's get the full picture of where everything lives. Every file in this project has an address, and that address tells you its layer, its responsibility, and its rules before you even open it.
+
+```text
+rover_line_follow/                  ← project root (run all commands from here)
+│
+├── main.py                         ← entry point only — no logic lives here
+├── config.py                       ← tunable parameters: PID gains, speeds, thresholds
+│
+├── control/                        ← BEHAVIOR layer: "what should the robot do?"
+│   ├── __init__.py                 ← marks directory as a Python package
+│   └── line_follow.py              ← LineFollower class — PID-based line tracking
+│
+├── drivers/                        ← HARDWARE layer: "how do we talk to this device?"
+│   ├── __init__.py
+│   ├── motors.py                   ← MotorDriver class — PWM + direction control
+│   └── line_sensor.py              ← LineSensorDriver class — MCP3008 ADC reads
+│
+├── hal/                            ← HARDWARE ABSTRACTION layer: "what pin is what?"
+│   ├── __init__.py
+│   └── pin_config.py               ← ALL GPIO BCM pin numbers live here. Only here.
+│
+├── utils/                          ← UTILITIES layer: reusable, hardware-free code
+│   ├── __init__.py
+│   ├── pid.py                      ← PIDController class — pure math, no hardware
+│   └── logger.py                   ← centralized logging setup — call once in main.py
+│
+├── tests/                          ← TESTS: run on any laptop, no hardware needed
+│   ├── __init__.py
+│   ├── test_pid.py                 ← unit tests for PID math
+│   └── test_line_follow.py         ← behavior tests using mock drivers
+│
+├── .env                            ← runtime overrides (log level, mode) — not in Git
+├── .gitignore                      ← excludes venv/, __pycache__/, .env, logs
+├── requirements.txt                ← pinned runtime dependencies (for Pi deployment)
+├── requirements-dev.txt            ← dev/test dependencies (pytest, python-dotenv)
+└── README.md                       ← project overview and setup instructions
+```
+
+Notice the pattern: every subdirectory is a **layer**, and every layer has a single-word answer to the question "what does this layer know about?" The `hal/` layer knows about pins. The `drivers/` layer knows about hardware devices. The `control/` layer knows about behavior. The `utils/` layer knows about algorithms. `main.py` knows how to connect them all. Nothing else.
 
 ---
 
