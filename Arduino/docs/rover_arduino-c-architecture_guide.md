@@ -2,6 +2,8 @@
 
 > **Jim The STEAM Clown Edition** — Modular Design Using Arduino IDE, Line Following Rover Reference Design
 
+> **Super Big Disclaimer** - This was prompted and generated with ChatGPT, then briefly reviewed by jim The STEAM Clown, and then passed to Claude to update revise, tune, and recommend additions, then the AI documentation rules were applied, BUT, and this is a BIG BUT, I have not yet really reviewed this to be accurate or even what I want.  That will take the Summer 2026, while I am revamping my Arduino / Rover curriculum.
+
 ---
 
 ## 🧭 Overview
