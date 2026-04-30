@@ -65,7 +65,8 @@ Sensor model and operating range
 
 📁 3. Project Structure Rules ✏️
 Follow this structure. Every directory is a layer. Every layer has one job.
-'''text
+
+```text
 rover_<name>/                       ← project root (descriptive name, not generic)
 │
 ├── <rover_name>.py                 ← entry point only (descriptive name, e.g.
@@ -99,7 +100,7 @@ rover_<name>/                       ← project root (descriptive name, not gene
 ├── requirements.txt                ← pinned runtime dependencies
 ├── requirements-dev.txt            ← adds pytest, python-dotenv
 └── README.md
-'''
+```
 
 
 Layer rules (absolute — no exceptions):
