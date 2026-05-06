@@ -28,8 +28,8 @@ from hal.pin_config import (
     MOTOR_RIGHT_ENB,
     MOTOR_RIGHT_IN3,
     MOTOR_RIGHT_IN4,
-    ULTRASONIC_TRIG,
-    ULTRASONIC_ECHO,
+    # ULTRASONIC_TRIG,
+    # ULTRASONIC_ECHO,
 )
 
 # ── Configure gpiozero to use pigpio with BOARD numbering ─────
@@ -47,7 +47,7 @@ right_enb = PWMOutputDevice(MOTOR_RIGHT_ENB, initial_value=0)
 right_in3 = DigitalOutputDevice(MOTOR_RIGHT_IN3, initial_value=False)
 right_in4 = DigitalOutputDevice(MOTOR_RIGHT_IN4, initial_value=False)
 
-sensor = DistanceSensor(echo=ULTRASONIC_ECHO, trigger=ULTRASONIC_TRIG)
+# sensor = DistanceSensor(echo=ULTRASONIC_ECHO, trigger=ULTRASONIC_TRIG)
 
 
 def set_motors(left: float, right: float) -> None:
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     print(f"Using BOARD pin {STATUS_LED} for status LED")
     print(f"Using BOARD pins {MOTOR_LEFT_ENA}/{MOTOR_LEFT_IN1}/{MOTOR_LEFT_IN2} for left motor")
     print(f"Using BOARD pins {MOTOR_RIGHT_ENB}/{MOTOR_RIGHT_IN3}/{MOTOR_RIGHT_IN4} for right motor")
-    print(f"Using BOARD pins {ULTRASONIC_TRIG}/{ULTRASONIC_ECHO} for ultrasonic sensor")
+    # print(f"Using BOARD pins {ULTRASONIC_TRIG}/{ULTRASONIC_ECHO} for ultrasonic sensor")
 
     try:
         # Startup blink — 3 flashes to show the program is alive
@@ -96,6 +96,20 @@ if __name__ == "__main__":
             led.on();  time.sleep(0.2)
             led.off(); time.sleep(0.2)
 
+        # Simple Motor Test - Drive forward, backward
+        # drive forward
+        led.off()
+        set_motors(0.5, 0.5)
+        time.sleep(2)
+        stop()
+        time.sleep(0.5)
+        # drive backward
+        set_motors(-0.5, -0.5)
+        time.sleep(2)
+        stop()
+        time.sleep(0.5)
+
+        """
         # Simple obstacle avoidance loop
         while True:
             distance_cm = sensor.distance * 100   # gpiozero returns metres
@@ -113,6 +127,7 @@ if __name__ == "__main__":
                 set_motors(0.5, 0.5)
 
             time.sleep(0.1)
+        """
 
     except KeyboardInterrupt:
         print("\nCtrl+C received — stopping")
