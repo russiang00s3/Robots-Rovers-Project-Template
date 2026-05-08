@@ -1,8 +1,8 @@
 # hal/pin_config.py
 # All Raspberry Pi pin assignments for the rover.
 #
-# BOARD numbering — these numbers refer to the physical pin
-# positions on the 40-pin GPIO header, NOT BCM/GPIO numbers.
+# BCM numbering — these numbers refer to the BCM pin
+# positions, NOT the physical 40-pin GPIO header BOARD/GPIO numbers.
 # Pin 1 is the 3.3V pin in the top-left corner of the header.
 # Reference: https://pinout.xyz  (select "BOARD" numbering)
 #
