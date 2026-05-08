@@ -15,9 +15,7 @@ import time
 
 from gpiozero import Device, LED, PWMOutputDevice, DigitalOutputDevice
 from gpiozero import DistanceSensor
-pins = "BCM"
-if pins == "BOARD" :
-    from gpiozero.pins.pigpio import PiGPIOFactory
+from gpiozero.pins.pigpio import PiGPIOFactory
 
 # ── Import pin numbers from the HAL package ───────────────────
 # This is the only place pin numbers enter the program.
@@ -36,7 +34,9 @@ from hal.pin_config import (
 
 # ── Configure gpiozero to use pigpio with BOARD numbering ─────
 # This must happen before any Device is created.
-Device.pin_factory = PiGPIOFactory(pin_numbering='BOARD')
+pins = "BCM"
+if pins == "BOARD" :
+    Device.pin_factory = PiGPIOFactory(pin_numbering='BOARD')
 
 # ── Set up hardware devices using BOARD pin numbers ───────────
 led    = LED(STATUS_LED)
