@@ -77,7 +77,7 @@ def drive_forward() -> None:
     """Stop both motors."""
     set_motors(0.5, 0.5)
 
-def driver_backward() -> None:
+def drive_backward() -> None:
     """Stop both motors."""
     set_motors(-0.5, -0.50)
 
