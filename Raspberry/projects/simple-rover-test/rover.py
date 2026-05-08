@@ -15,7 +15,9 @@ import time
 
 from gpiozero import Device, LED, PWMOutputDevice, DigitalOutputDevice
 from gpiozero import DistanceSensor
-from gpiozero.pins.pigpio import PiGPIOFactory
+pins = "BCM"
+if pins == "BOARD" :
+    from gpiozero.pins.pigpio import PiGPIOFactory
 
 # ── Import pin numbers from the HAL package ───────────────────
 # This is the only place pin numbers enter the program.
