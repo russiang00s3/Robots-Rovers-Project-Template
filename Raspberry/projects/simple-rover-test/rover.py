@@ -27,8 +27,8 @@ from hal.pin_config import (
     MOTOR_RIGHT_ENB,
     MOTOR_RIGHT_IN3,
     MOTOR_RIGHT_IN4,
-    # ULTRASONIC_TRIG,
-    # ULTRASONIC_ECHO,
+    ULTRASONIC_TRIG,
+    ULTRASONIC_ECHO,
 )
 
 # ── Set up hardware devices using BCM pins from pin_config.py in /hal ───────────
