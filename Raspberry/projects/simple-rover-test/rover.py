@@ -8,15 +8,11 @@
 # Run:  python3 rover.py
 #
 # Requirements:
-#   pip install gpiozero pigpio
-#   sudo pigpiod          (start the pigpio daemon)
-pins = "BCM"
+# All Pins are "BCM"
 import time
 
 from gpiozero import Device, LED, PWMOutputDevice, DigitalOutputDevice
 from gpiozero import DistanceSensor
-if pins == "BOARD" : 
-    from gpiozero.pins.pigpio import PiGPIOFactory
 
 # ── Import pin numbers from the HAL package ───────────────────
 # This is the only place pin numbers enter the program.
@@ -33,13 +29,7 @@ from hal.pin_config import (
     # ULTRASONIC_ECHO,
 )
 
-# ── Configure gpiozero to use pigpio with BOARD numbering ─────
-# This must happen before any Device is created.
-pins = "BCM"
-if pins == "BOARD" :
-    Device.pin_factory = PiGPIOFactory(pin_numbering='BOARD')
-
-# ── Set up hardware devices using BOARD pin numbers ───────────
+# ── Set up hardware devices using BCM pin numbers ───────────
 led    = LED(STATUS_LED)
 
 left_ena  = PWMOutputDevice(MOTOR_LEFT_ENA,  initial_value=0)
