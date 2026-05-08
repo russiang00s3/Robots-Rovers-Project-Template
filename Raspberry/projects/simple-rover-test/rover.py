@@ -10,7 +10,7 @@
 # Requirements:
 #   pip install gpiozero pigpio
 #   sudo pigpiod          (start the pigpio daemon)
-
+pins = "BCM"
 import time
 
 from gpiozero import Device, LED, PWMOutputDevice, DigitalOutputDevice
