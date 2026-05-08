@@ -4,13 +4,15 @@
 # Imports pin assignments from the hal/ package and uses them
 # to set up gpiozero devices. All pin numbers come from
 # hal/pin_config.py — none are hardcoded here.
+# All Pins are "BCM"
 #
 # Run:  python3 rover.py
 #
 # Requirements:
-# All Pins are "BCM"
-import time
+# Standard Default - No Specific Requirements yet
 
+# Imports:
+import time
 from gpiozero import Device, LED, PWMOutputDevice, DigitalOutputDevice
 from gpiozero import DistanceSensor
 
@@ -29,7 +31,7 @@ from hal.pin_config import (
     # ULTRASONIC_ECHO,
 )
 
-# ── Set up hardware devices using BCM pin numbers ───────────
+# ── Set up hardware devices using BCM pins from pin_config.py in /hal ───────────
 led    = LED(STATUS_LED)
 
 left_ena  = PWMOutputDevice(MOTOR_LEFT_ENA,  initial_value=0)
