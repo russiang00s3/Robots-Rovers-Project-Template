@@ -42,7 +42,7 @@ right_enb = PWMOutputDevice(MOTOR_RIGHT_ENB, initial_value=0)
 right_in3 = DigitalOutputDevice(MOTOR_RIGHT_IN3, initial_value=False)
 right_in4 = DigitalOutputDevice(MOTOR_RIGHT_IN4, initial_value=False)
 
-# sensor = DistanceSensor(echo=ULTRASONIC_ECHO, trigger=ULTRASONIC_TRIG)
+sensor = DistanceSensor(echo=ULTRASONIC_ECHO, trigger=ULTRASONIC_TRIG)
 
 
 def set_motors(left: float, right: float) -> None:
